@@ -1,126 +1,257 @@
-img{
-  width: 60%;
-  align-self: center;
+/* ==========================================================================
+   Dealerships Portal - Premium Automotive Claymorphism Design System
+   Palette: Slate Navy (#0F172A, #1E293B), Accent Blue (#2563EB), 
+   Light Grays (#F8FAFC, #F1F5F9, #E2E8F0), Pure White (#FFFFFF)
+   ========================================================================== */
+
+:root {
+  --navy-dark: #0f172a;
+  --navy-surface: #1e293b;
+  --navy-accent: #2563eb;
+  --navy-accent-hover: #1d4ed8;
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --border-light: rgba(226, 232, 240, 0.9);
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --clay-shadow: 8px 8px 18px rgba(15, 23, 42, 0.05), -8px -8px 18px #ffffff;
+  --clay-shadow-hover: 10px 10px 24px rgba(15, 23, 42, 0.08), -10px -10px 24px #ffffff;
+  --clay-inset: inset 2px 2px 5px rgba(15, 23, 42, 0.04), inset -2px -2px 5px #ffffff;
 }
 
-.card{
-  border: rgb(103, 102, 105) 3px solid;
-  display: flex;  
-  flex-direction: column;
-  margin-left:5%;
-  margin-right:5%;
-  margin-top: 1%;
-  margin-bottom: 1%;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
 
-.row{
-  display: flex;  
-  flex: 1;
-  flex-direction: row;
-  margin: auto;
-  margin-top: 1%;
-  justify-content: center;
-  padding:20px;
+/* Navbar */
+.dealership-navbar {
+  background-color: var(--navy-dark) !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+  min-height: 72px;
 }
 
-.container{
-  justify-content: center;
-}
-.details{
-  font-size: 20px;
-  color: rgb(97, 64, 128);
-  padding:20px;
+.brand-title {
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: -0.5px;
+  color: #ffffff !important;
 }
 
-.title{
-  font-size: 20px;
-  background-color: rgb(97, 64, 128);
-  color: white;
-  text-align: center;
-  margin:20px;
-  padding:5px;
+.dealership-navbar .nav-link {
+  color: #cbd5e1 !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-right: 12px;
+  transition: all 0.2s ease-in-out;
+  padding: 6px 12px !important;
+  border-radius: 8px;
 }
 
-.homepage_links{
-  color:  rgb(97, 64, 128);
-  padding: 25%;
-  font-size: larger;
-  }
+.dealership-navbar .nav-link:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.08);
+}
 
-.loginlink{
+.dealership-navbar .nav-link.active {
+  color: #ffffff !important;
+  background-color: rgba(37, 99, 235, 0.35);
+  font-weight: 600;
+}
+
+/* Claymorphic Containers */
+.clay-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  box-shadow: var(--clay-shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.clay-card:hover {
+  box-shadow: var(--clay-shadow-hover);
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  box-shadow: var(--clay-shadow);
+}
+
+/* Hero Section */
+.dealership-hero-img-wrapper {
+  position: relative;
+  max-height: 380px;
+  overflow: hidden;
+}
+
+.hero-dealership-img {
+  max-height: 380px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.hero-overlay-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.2) 0%, rgba(15, 23, 42, 0.6) 100%);
+}
+
+.text-navy {
+  color: var(--navy-dark) !important;
+}
+
+/* Buttons */
+.btn-navy-primary {
+  background-color: var(--navy-accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 24px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-navy-primary:hover {
+  background-color: var(--navy-accent-hover);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.35);
+}
+
+.btn-outline-navy {
+  background-color: transparent;
+  color: var(--navy-dark);
+  border: 1.5px solid var(--navy-dark);
+  border-radius: 12px;
+  padding: 10px 24px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-outline-navy:hover {
+  background-color: var(--navy-dark);
+  color: #ffffff;
+}
+
+.btn-nav-action {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 6px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-left: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-nav-action:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.username-display {
+  color: #93c5fd;
+  font-weight: 600;
+  margin-right: 10px;
+  font-size: 0.95rem;
+}
+
+/* Team Cards */
+.team-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #f1f5f9;
+  border: 3px solid #e2e8f0;
+  padding: 4px;
+  box-shadow: 0 4px 8px rgba(15, 23, 42, 0.06);
+}
+
+.team-email {
+  color: var(--navy-accent);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.team-email:hover {
+  text-decoration: underline;
+}
+
+/* Form inputs with claymorphism */
+.clay-input {
+  background-color: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  color: var(--navy-dark);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.clay-input:focus {
+  border-color: var(--navy-accent);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.quick-stat-badge {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 10px 18px;
+}
+
+.letter-spacing-1 {
+  letter-spacing: 1px;
+}
+
+/* Legacy compatibility classes */
+.homepage_links {
+  color: #cbd5e1;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.loginlink {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  align-items: center;
 }
 
-.banner{
+.banner {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex:1
 }
 
-.form_panel {
-  padding:2%;
-  display: flex;
-  flex-direction: column;
-  border-radius: 50px;
-  text-align:center;
-  box-shadow: 2px 2px 2px 3px #999;
-  margin: auto;
-  min-width: 350px;
-  width: 80%;
-  margin-top:3%;
-  background-color: black;
+.username {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #93c5fd;
+  margin-right: 12px;
 }
 
-.navitems{
-  display: flex;
-  flex-direction: row;
-  padding: 20px;
-  flex: 1;
-  justify-content: flex-start;
-  justify-self: center;
-}
-
-.nav_item{
-  margin-left:15px;
-  font-size: 20px;
-  color: black;
-  align-self: center;
-}
-
-.username{
-  font: 30px sans-serif;
-  color:black;
-  justify-content: 'flex-end';
-  align-self:flex-end;
-  vertical-align: middle;
-}
-
-.input_panel {
-  display: flex;
-  flex-direction: row;
-  padding: 20px;
-  flex: 1;
-  justify-content:flex-end;
-  align-items: flex-end;
-  vertical-align: middle;
-}
-
-.small_header{
-  font: 30px sans-serif;
-  color:black;
-  margin: .5cm;
-}
-
-.img_icon {
-  align-self: center;
-    width:40px;
-    background-color:#0C9;
-    color:#FFF;
-    border-radius:50px;
-    text-align:center;
-    box-shadow: 2px 2px 3px #999;  
+.nav_item {
+  color: #cbd5e1;
+  text-decoration: none;
+  margin-left: 10px;
 }

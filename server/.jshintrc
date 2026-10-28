@@ -1,0 +1,24 @@
+{
+  "esversion": 8,
+  "undef": true,
+  "globals": {
+    "data": true
+  },
+  "laxbreak": true,
+  "asi": true,
+  "evil": false,
+  "browser": true,
+  "devel": true,
+  "node": true,
+  "maxerr": 100,
+  "predef": [],
+  "maxparams": 5,
+  "maxdepth": 5,
+  "maxstatements": 35,
+  "maxcomplexity": 15,
+  "maxlen": 140,
+  "loopfunc": true,
+  "quotmark": false,
+  "sub": false
+}
+

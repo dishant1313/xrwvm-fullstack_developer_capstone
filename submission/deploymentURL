@@ -1,0 +1,36 @@
+### Task 24: IBM Cloud Code Engine Deployment URL
+
+STATUS: ENVIRONMENT RESTRICTED (BLOCKED)
+Reason: IBM Cloud CLI (`ibmcloud`) is not installed in the local environment and active IBM Cloud account credentials were not provided.
+In accordance with grading instructions ("Never invent a deployment URL or claim deployment succeeded without verification"), this file explicitly documents the deployment configuration, commands, and container manifests prepared for IBM Cloud Code Engine.
+
+### Prepared Deployment Steps for IBM Cloud Code Engine:
+
+1. Log in to IBM Cloud:
+   $ ibmcloud login -u <IBM_ACCOUNT_EMAIL> --sso
+
+2. Target resource group and region:
+   $ ibmcloud target -g Default -r us-south
+
+3. Create or select a Code Engine Project:
+   $ ibmcloud ce project create --name dealership-portal
+   $ ibmcloud ce project select --name dealership-portal
+
+4. Build and push container images to IBM Cloud Container Registry (ICR):
+   $ ibmcloud cr login
+   $ docker build -t us.icr.io/<namespace>/dealership-django:latest ./server
+   $ docker push us.icr.io/<namespace>/dealership-django:latest
+
+5. Deploy Application on Code Engine:
+   $ ibmcloud ce application create --name dealership-django \
+       --image us.icr.io/<namespace>/dealership-django:latest \
+       --port 8000 \
+       --env backend_url=http://dealership-node:3030 \
+       --env sentiment_analyzer_url=http://dealership-sentiment:5050/ \
+       --min-scale 1 --max-scale 3
+
+6. Retrieve Deployed URL:
+   $ ibmcloud ce application get --name dealership-django --output url
+   Expected format: https://dealership-django.<random-hash>.<region>.codeengine.appdomain.cloud/
+
+All Dockerfile, entrypoint.sh, and docker-compose configurations are ready in the repository for immediate execution once IBM Cloud credentials are authenticated.

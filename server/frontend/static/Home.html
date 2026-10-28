@@ -1,64 +1,94 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="static/style.css">
-  <link rel="stylesheet" href="static/bootstrap.min.css">
-<script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dealerships - National Vehicle Dealer Network</title>
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/style.css">
+  <script>
+    const logout = async () => {
+      let logout_url = window.location.origin + "/djangoapp/logout";
+      const res = await fetch(logout_url, { method: "GET" });
+      const json = await res.json();
+      if (json) {
+        sessionStorage.removeItem("username");
+        sessionStorage.removeItem("firstname");
+        sessionStorage.removeItem("lastname");
+        window.location.href = window.location.origin;
+      }
+    };
 
-const logout = async (e) => {
-//Include the code for logout here.
-};
-
-let checkSession = ()=>{
-  let curr_user = sessionStorage.getItem("username");
-
-  if (curr_user && curr_user !== "") {
-    document.getElementById("loginlogout").innerHTML = 
-    '<span class="homepage_links">' + curr_user +'</span>' +
-    '<a class="homepage_links" onclick="logout()" href="/">Logout</a>'
-  } else {
-    document.getElementById("loginlogout").innerHTML = 
-    '<a class="homepage_links" href="/login">Login</a>'+
-    '<a class="homepage_links"  href="/register">Register</a>'
-  }
- }
-</script>
+    const checkSession = () => {
+      let curr_user = sessionStorage.getItem("username");
+      let loginlogout = document.getElementById("loginlogout");
+      if (loginlogout) {
+        if (curr_user && curr_user !== "") {
+          loginlogout.innerHTML = 
+            '<span class="username-display">' + curr_user + '</span>' +
+            '<a class="btn-nav-action" onclick="logout()" href="#">Logout</a>';
+        } else {
+          loginlogout.innerHTML = 
+            '<a class="btn-nav-action" href="/login">Login</a>' +
+            '<a class="btn-nav-action" href="/register">Register</a>';
+        }
+      }
+    };
+  </script>
 </head>
 <body onload="checkSession()">
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
-  <div class="container-fluid">
-    <h2 style="padding-right: 5%;">Dealerships</h2>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" style="font-size: larger;" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" style="font-size: larger;" href="/about">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" style="font-size: larger;" href="/contact">Contact Us</a>
-        </li>
-      </ul>
-      <span class="navbar-text">
-        <div class="loginlink" id="loginlogout">
-        </div>
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark dealership-navbar">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand brand-title" href="/">Dealerships</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/dealers">Dealerships</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact Us</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          <div class="loginlink" id="loginlogout"></div>
         </span>
+      </div>
     </div>
-  </div>
-</nav>
-<div style="display: flex;flex-direction: column;">
-<div class="card" style="width: 50%;margin-top: 50px;align-self: center;">
-  <img src="static/car_dealership.jpg" class="card-img-top" alt="...">
-  <div class="banner">
-    <h5>Welcome to our Dealerships!</h5>
-    <a href="/dealers" class="btn" style="background-color: aqua;margin:10px">View Dealerships</a>
-  </div>
-</div>
-</div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <main class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="clay-card overflow-hidden text-center p-0">
+          <div class="dealership-hero-img-wrapper">
+            <img src="/static/car_dealership.jpg" class="w-100 hero-dealership-img" alt="Modern Car Dealership Showroom">
+            <div class="hero-overlay-gradient"></div>
+          </div>
+          <div class="p-5 text-center">
+            <span class="badge bg-primary mb-3 px-3 py-2 text-uppercase letter-spacing-1">Official National Directory</span>
+            <h1 class="display-5 fw-bold text-navy mb-3">Welcome to our Dealerships!</h1>
+            <p class="text-secondary lead fs-6 mx-auto mb-4" style="max-width: 650px;">
+              Discover verified automotive dealerships across all 50 states. Explore certified inventories, read verified customer reviews with AI sentiment analysis, and share your own dealership experience.
+            </p>
+            <div class="d-flex justify-content-center gap-3">
+              <a href="/dealers" class="btn btn-navy-primary px-4 py-2 fs-6 fw-semibold shadow-sm">View Dealerships</a>
+              <a href="/about" class="btn btn-outline-navy px-4 py-2 fs-6 fw-semibold">Learn About Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 </body>
 </html>

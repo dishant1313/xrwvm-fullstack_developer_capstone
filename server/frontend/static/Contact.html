@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Best Dealerships</title>
+  <!-- Link stylesheets -->
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/style.css">
+  <script>
+    const logout = async () => {
+      let logout_url = window.location.origin + "/djangoapp/logout";
+      const res = await fetch(logout_url, { method: "GET" });
+      const json = await res.json();
+      if (json) {
+        sessionStorage.removeItem("username");
+        sessionStorage.removeItem("firstname");
+        sessionStorage.removeItem("lastname");
+        window.location.href = window.location.origin;
+      }
+    };
+
+    const checkSession = () => {
+      let curr_user = sessionStorage.getItem("username");
+      let loginlogout = document.getElementById("loginlogout");
+      if (loginlogout) {
+        if (curr_user && curr_user !== "") {
+          loginlogout.innerHTML = 
+            '<span class="username-display">' + curr_user + '</span>' +
+            '<a class="btn-nav-action" onclick="logout()" href="#">Logout</a>';
+        } else {
+          loginlogout.innerHTML = 
+            '<a class="btn-nav-action" href="/login">Login</a>' +
+            '<a class="btn-nav-action" href="/register">Register</a>';
+        }
+      }
+    };
+
+    const handleContactSubmit = (e) => {
+      e.preventDefault();
+      alert("Thank you for contacting us! An automotive advisor will get in touch with you shortly.");
+      e.target.reset();
+    };
+  </script>
+</head>
+<body onload="checkSession()">
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark dealership-navbar">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand brand-title" href="/">Dealerships</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/dealers">Dealerships</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/contact">Contact Us</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          <div class="loginlink" id="loginlogout"></div>
+        </span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="container py-5">
+    <!-- Hero / Header card -->
+    <div class="clay-card contact-hero-card mb-5">
+      <div class="row align-items-center g-4 p-4">
+        <div class="col-lg-6">
+          <span class="badge bg-primary mb-2 px-3 py-2 text-uppercase letter-spacing-1">Direct Assistance</span>
+          <h1 class="display-6 fw-bold text-navy mb-3">Get in Touch With Our Dealership Network</h1>
+          <p class="text-secondary lead fs-6 mb-4">
+            Have questions regarding vehicle inventory, verified dealership locations, or review submissions? Our dedicated client assistance and dealer network team is available 7 days a week.
+          </p>
+          <div class="d-flex gap-3">
+            <div class="quick-stat-badge">
+              <span class="fw-bold text-navy d-block fs-5">&lt; 2 hrs</span>
+              <span class="text-muted small">Average Response</span>
+            </div>
+            <div class="quick-stat-badge">
+              <span class="fw-bold text-navy d-block fs-5">50+ States</span>
+              <span class="text-muted small">Nationwide Network</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center">
+          <img src="/static/contactus.png" alt="Contact Us Banner" class="img-fluid rounded-4 shadow-sm" style="max-height: 260px; object-fit: contain;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Information and Form Grid -->
+    <div class="row g-4">
+      <!-- Contact Details Cards -->
+      <div class="col-lg-5">
+        <div class="d-flex flex-column gap-3">
+          <!-- Department 1 -->
+          <div class="clay-card p-4">
+            <h5 class="fw-bold text-navy mb-2">Customer Care & Support</h5>
+            <p class="text-secondary small mb-2">For car buyers seeking assistance with dealer listings, review submissions, and service feedback.</p>
+            <div class="contact-line mb-1">
+              <strong>Email:</strong> <a href="mailto:support@dealerships.com" class="text-primary text-decoration-none">support@dealerships.com</a>
+            </div>
+            <div class="contact-line">
+              <strong>Toll-Free:</strong> <span class="text-navy">1-800-555-CARS (2277)</span>
+            </div>
+          </div>
+
+          <!-- Department 2 -->
+          <div class="clay-card p-4">
+            <h5 class="fw-bold text-navy mb-2">Dealership Partner Network</h5>
+            <p class="text-secondary small mb-2">Are you a licensed dealership interested in joining our certified network?</p>
+            <div class="contact-line mb-1">
+              <strong>Email:</strong> <a href="mailto:partners@dealerships.com" class="text-primary text-decoration-none">partners@dealerships.com</a>
+            </div>
+            <div class="contact-line">
+              <strong>Direct:</strong> <span class="text-navy">+1 (312) 555-0199</span>
+            </div>
+          </div>
+
+          <!-- Department 3 -->
+          <div class="clay-card p-4">
+            <h5 class="fw-bold text-navy mb-2">National Headquarters</h5>
+            <p class="text-secondary small mb-2">Visit or send corporate correspondence to our central operations hub:</p>
+            <p class="text-navy mb-1 small fw-semibold">100 Michigan Avenue, Suite 1400</p>
+            <p class="text-muted small mb-0">Chicago, IL 60601, United States</p>
+            <p class="text-muted small mb-0 mt-2"><strong>Hours:</strong> Mon - Fri: 8:00 AM - 7:00 PM CST | Sat: 9:00 AM - 4:00 PM CST</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="col-lg-7">
+        <div class="clay-card p-4 p-md-5 h-100">
+          <h3 class="fw-bold text-navy mb-2">Send Us an Inquiry</h3>
+          <p class="text-muted small mb-4">Complete the form below and an automotive specialist will reach out to you.</p>
+
+          <form onsubmit="handleContactSubmit(event)">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="contact-name" class="form-label text-navy fw-semibold small">Full Name</label>
+                <input type="text" id="contact-name" class="form-control clay-input" placeholder="e.g. John Doe" required>
+              </div>
+              <div class="col-md-6">
+                <label for="contact-email" class="form-label text-navy fw-semibold small">Email Address</label>
+                <input type="email" id="contact-email" class="form-control clay-input" placeholder="e.g. john@example.com" required>
+              </div>
+              <div class="col-md-6">
+                <label for="contact-phone" class="form-label text-navy fw-semibold small">Phone Number</label>
+                <input type="tel" id="contact-phone" class="form-control clay-input" placeholder="e.g. (555) 234-5678">
+              </div>
+              <div class="col-md-6">
+                <label for="contact-topic" class="form-label text-navy fw-semibold small">Inquiry Department</label>
+                <select id="contact-topic" class="form-select clay-input" required>
+                  <option value="" selected disabled>Select an option</option>
+                  <option value="dealer-inquiry">Dealer Locator & Info</option>
+                  <option value="review-support">Review & Sentiment Support</option>
+                  <option value="partnership">Dealer Partnership</option>
+                  <option value="general">General Questions</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label for="contact-subject" class="form-label text-navy fw-semibold small">Subject</label>
+                <input type="text" id="contact-subject" class="form-control clay-input" placeholder="How can we help?" required>
+              </div>
+              <div class="col-12">
+                <label for="contact-message" class="form-label text-navy fw-semibold small">Message</label>
+                <textarea id="contact-message" rows="4" class="form-control clay-input" placeholder="Type your message here..." required></textarea>
+              </div>
+              <div class="col-12 mt-4">
+                <button type="submit" class="btn btn-navy-primary w-100 py-2 fs-6 fw-semibold">Submit Inquiry</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
+

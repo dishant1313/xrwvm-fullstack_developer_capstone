@@ -1,0 +1,53 @@
+### Task 9: Get All Dealerships - cURL Command and Response ###
+
+Command:
+curl -X GET http://localhost:8000/djangoapp/get_dealers
+
+Response:
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "status": 200,
+  "dealers": [
+    {
+      "_id": "6ae1d158f0d98134e2eba3bf",
+      "id": 1,
+      "city": "El Paso",
+      "state": "Texas",
+      "address": "3 Nova Court",
+      "zip": "88563",
+      "lat": "31.6948",
+      "long": "-106.3",
+      "short_name": "Holdlamis",
+      "full_name": "Holdlamis Car Dealership"
+    },
+    {
+      "_id": "6ae1d158f0d98134e2eba3c0",
+      "id": 2,
+      "city": "Minneapolis",
+      "state": "Minnesota",
+      "address": "6337 Butternut Crossing",
+      "zip": "55402",
+      "lat": "44.9762",
+      "long": "-93.2759",
+      "short_name": "Temp",
+      "full_name": "Temp Car Dealership"
+    },
+    {
+      "_id": "6ae1d158f0d98134e2eba3c1",
+      "id": 3,
+      "city": "Birmingham",
+      "state": "Alabama",
+      "address": "9477 Twin Pines Center",
+      "zip": "35285",
+      "lat": "33.5446",
+      "long": "-86.9292",
+      "short_name": "Sub-Ex",
+      "full_name": "Sub-Ex Car Dealership"
+    },
+    ...
+    [Total: 50 dealerships returned]
+  ]
+}
+
