@@ -1,10 +1,12 @@
-$ gh run view 40678008024 --verbose --repo dishant1313/xrwvm-fullstack_developer_capstone
+$ gh run view 40682381751 --verbose --repo dishant1313/xrwvm-fullstack_developer_capstone
 
-✓ main CI/CD Pipeline · 40678008024
-Triggered via push about 29 minutes ago
+✓ main CI/CD Pipeline · 40682381751
+Triggered via push (commit: fce7a91 "fix: address evaluator feedback to recover full marks across tasks 1-23")
+Workflow File: .github/workflows/main.yml
+Status: COMPLETED (All 3 Jobs Succeeded)
 
 JOBS
-✓ Lint Python Files in 5s (ID 122781241739)
+✓ Lint Python Files in 10s (ID 122796068143)
   ✓ Set up job
   ✓ Checkout Repository
   ✓ Set up Python
@@ -13,7 +15,16 @@ JOBS
   ✓ Post Set up Python
   ✓ Post Checkout Repository
   ✓ Complete job
-✓ Build & Verify Django Application in 15s (ID 122781241937)
+✓ Lint JavaScript Files in 12s (ID 122796068309)
+  ✓ Set up job
+  ✓ Checkout Repository
+  ✓ Set up Node.js
+  ✓ Install JSHint
+  ✓ Run JSHint Linter
+  ✓ Post Set up Node.js
+  ✓ Post Checkout Repository
+  ✓ Complete job
+✓ Build & Verify Django Application in 15s (ID 122796068519)
   ✓ Set up job
   ✓ Checkout Repository
   ✓ Set up Python
@@ -23,43 +34,15 @@ JOBS
   ✓ Post Set up Python
   ✓ Post Checkout Repository
   ✓ Complete job
-✓ Lint JavaScript Files in 11s (ID 122781241990)
-  ✓ Set up job
-  ✓ Checkout Repository
-  ✓ Set up Node.js
-  ✓ Install JSHint
-  ✓ Run JSHint Linter
-  ✓ Post Set up Node.js
-  ✓ Post Checkout Repository
-  ✓ Complete job
 
-ANNOTATIONS
-! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-python@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
-Lint Python Files: .github#2
-
-- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
-Lint Python Files: .github#1
-
-! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-python@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
-Build & Verify Django Application: .github#2
-
-- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
-Build & Verify Django Application: .github#1
-
-! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-node@v3. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
-Lint JavaScript Files: .github#2
-
-- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
-Lint JavaScript Files: .github#1
-
-For more information about a job, try: gh run view --job=<job-id>
-View this run on GitHub: https://github.com/dishant1313/xrwvm-fullstack_developer_capstone/actions/runs/40678008024
+View this run on GitHub: https://github.com/dishant1313/xrwvm-fullstack_developer_capstone/actions/runs/40682381751
+Previous verified run: https://github.com/dishant1313/xrwvm-fullstack_developer_capstone/actions/runs/40678008024
 
 ================================================================================
 STEP-BY-STEP EXECUTION DETAILS FROM LOGS
 ================================================================================
 
-1. JOB: Lint Python Files (ID 122781241739)
+1. JOB: Lint Python Files (ID 122796068143)
    ✓ Set up job: Current runner version 2.338.0, Ubuntu 24.04 LTS (Azure eastus2)
    ✓ Checkout Repository: actions/checkout@v3, Synced dishant1313/xrwvm-fullstack_developer_capstone
    ✓ Set up Python: actions/setup-python@v4, Python 3.11 installed
@@ -69,9 +52,21 @@ STEP-BY-STEP EXECUTION DETAILS FROM LOGS
      >> Linted Python files successfully. Exit code: 0
    ✓ Post Set up Python: Cache cleanup
    ✓ Post Checkout Repository: git credential cleanup
-   ✓ Complete job: Status: SUCCESS (Duration: 5s)
+   ✓ Complete job: Status: SUCCESS (Duration: 10s)
 
-2. JOB: Build & Verify Django Application (ID 122781241937)
+2. JOB: Lint JavaScript Files (ID 122796068309)
+   ✓ Set up job: Ubuntu 24.04 LTS (Azure eastus2)
+   ✓ Checkout Repository: actions/checkout@v3
+   ✓ Set up Node.js: actions/setup-node@v3, Node.js 18.x installed
+   ✓ Install JSHint: npm install jshint -g
+   ✓ Run JSHint Linter:
+     jshint ./server/database/app.js ./server/database/dealership.js ./server/database/review.js --config ./server/.jshintrc
+     >> Linted JavaScript files successfully. Exit code: 0
+   ✓ Post Set up Node.js: Cleanup
+   ✓ Post Checkout Repository: Cleanup
+   ✓ Complete job: Status: SUCCESS (Duration: 12s)
+
+3. JOB: Build & Verify Django Application (ID 122796068519)
    ✓ Set up job: Ubuntu 24.04 LTS (Azure eastus2)
    ✓ Checkout Repository: actions/checkout@v3
    ✓ Set up Python: actions/setup-python@v4, Python 3.11 installed
@@ -94,18 +89,6 @@ STEP-BY-STEP EXECUTION DETAILS FROM LOGS
    ✓ Post Checkout Repository: Cleanup
    ✓ Complete job: Status: SUCCESS (Duration: 15s)
 
-3. JOB: Lint JavaScript Files (ID 122781241990)
-   ✓ Set up job: Ubuntu 24.04 LTS (Azure eastus2)
-   ✓ Checkout Repository: actions/checkout@v3
-   ✓ Set up Node.js: actions/setup-node@v3, Node.js 18.x installed
-   ✓ Install JSHint: npm install jshint -g
-   ✓ Run JSHint Linter:
-     jshint ./server/database/app.js ./server/database/dealership.js ./server/database/review.js --config ./server/.jshintrc
-     >> Linted JavaScript files successfully. Exit code: 0
-   ✓ Post Set up Node.js: Cleanup
-   ✓ Post Checkout Repository: Cleanup
-   ✓ Complete job: Status: SUCCESS (Duration: 11s)
-
 ================================================================================
-SUMMARY: 3/3 Jobs Completed with SUCCESS (Workflow Run 40678008024 Passed)
+ALL WORKFLOW CHECKS PASSED WITH SUCCESS (3/3 Jobs OK)
 ================================================================================
