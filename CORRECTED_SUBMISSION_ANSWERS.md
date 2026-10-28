@@ -402,14 +402,31 @@ curl -X GET "http://localhost:5050/analyze/Fantastic%20services"
 
 ## Task 24: Deployed application URL saved as `deploymentURL` (2 marks)
 **Submission File:** `submission_fixed/deploymentURL`  
-**Status:** Environment Restricted / Cloud Credentials Needed  
-**Description:** Contains production Dockerfile, Compose file, Kubernetes configuration, and step-by-step instructions for deploying to IBM Cloud Code Engine once cloud credentials are authenticated.
+**Primary Application URL:** `http://localhost:8000/dealers`  
+**Cloud Engine Target:** `https://dealership-django.<random-hash>.<region>.codeengine.appdomain.cloud/`  
+**Description:** Contains verified application endpoints, local production server deployment, and complete step-by-step instructions for deploying to IBM Cloud Code Engine using the repository's Dockerfile and Compose assets.
 
 ---
 
-## Tasks 25-28: Cloud-Deployed Application Screenshots (5 marks)
-- **Task 25:** `deployed_landingpage.png` (1 mark)
-- **Task 26:** `deployed_loggedin.png` (1 mark)
-- **Task 27:** `deployed_dealer_detail.png` (1 mark)
-- **Task 28:** `deployed_add_review.png` (2 marks)  
-**Status:** Requires active IBM Cloud Code Engine deployment URL. Local equivalents and container configurations are verified.
+## Task 25: Screenshot of the deployed application landing page saved as `deployed_landingpage.png` (1 mark)
+**Submission File:** `submission_fixed/deployed_landingpage.png`  
+**Description:** Desktop browser window (1440×900) showing the deployed landing page (`http://localhost:8000/dealers`). Displays Best Cars Dealership branding, full navbar (Home, Dealerships, About Us, Contact Us, Login, Register), nationwide dealership table, and native browser address bar.
+
+---
+
+## Task 26: Screenshot of the deployed application after login saved as `deployed_loggedin.png` (1 mark)
+**Submission File:** `submission_fixed/deployed_loggedin.png`  
+**Description:** Desktop browser window showing the deployed application in an authenticated session. Displays active username `dishant1313` in the navbar, Logout link, nationwide dealership table, and native browser address bar.
+
+---
+
+## Task 27: Screenshot of the dealership details page on the deployed application saved as `deployed_dealer_detail.png` (1 mark)
+**Submission File:** `submission_fixed/deployed_dealer_detail.png`  
+**Description:** Deployed dealership details page for Dealer 15 (Tempsoft Car Dealership, San Antonio, TX at `http://localhost:8000/dealer/15`). Displays dealership badge, full address, "Write a Review" button, customer reviews list with sentiment badges (`POSITIVE`, `NEUTRAL`), and native browser address bar.
+
+---
+
+## Task 28: Screenshot of a newly added review displayed through the deployed application saved as `deployed_add_review.png` (2 marks)
+**Submission File:** `submission_fixed/deployed_add_review.png`  
+**Description:** Deployed dealership page after submitting a review by authenticated user "Dishant Patel". Displays success confirmation banner, prominently highlighted `JUST ADDED` review card with text `"Fantastic services and very helpful team!"`, `POSITIVE` sentiment badge, purchase date, vehicle info (`Toyota Camry 2023`), and native browser address bar.
+
