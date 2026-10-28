@@ -100,3 +100,4 @@ All 28 tasks have been implemented and verified with genuine execution evidence.
 
 1. **Docker Desktop:** Docker Desktop engine is installed locally but required elevated system privileges to start the background service; an embedded MongoDB memory instance was utilized for immediate local test execution and passed all tests.
 2. **IBM Cloud Code Engine:** The application is fully containerized and verified locally with Gunicorn and Dockerfiles. Live deployment to Code Engine can be executed using the steps documented in `submission/deploymentURL` upon provision of cloud credentials.
+

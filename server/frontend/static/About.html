@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - Best Dealerships</title>
-  <!-- Link stylesheets -->
-  <link rel="stylesheet" href="/static/bootstrap.min.css">
+  <title>About Us - Best Cars Dealership</title>
+  <!-- Link the style sheet here -->
   <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
   <script>
     const logout = async () => {
       let logout_url = window.location.origin + "/djangoapp/logout";
@@ -26,12 +26,12 @@
       if (loginlogout) {
         if (curr_user && curr_user !== "") {
           loginlogout.innerHTML = 
-            '<span class="username-display">' + curr_user + '</span>' +
-            '<a class="btn-nav-action" onclick="logout()" href="#">Logout</a>';
+            '<span class="username-display" style="color:white; margin-right:12px; font-weight:bold;">' + curr_user + '</span>' +
+            '<a class="btn btn-outline-light btn-sm" onclick="logout()" href="#">Logout</a>';
         } else {
           loginlogout.innerHTML = 
-            '<a class="btn-nav-action" href="/login">Login</a>' +
-            '<a class="btn-nav-action" href="/register">Register</a>';
+            '<a class="btn btn-outline-light btn-sm me-2" href="/login">Login</a>' +
+            '<a class="btn btn-light btn-sm" href="/register">Register</a>';
         }
       }
     };
@@ -39,25 +39,22 @@
 </head>
 <body onload="checkSession()">
   <!-- Navigation bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark dealership-navbar">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1e3a5f; min-height: 4.5rem;">
     <div class="container-fluid px-4">
-      <a class="navbar-brand brand-title" href="/">Dealerships</a>
+      <h2 style="padding-right: 5%; color: white; margin: 0; font-size: 1.75rem; font-weight: bold;">Dealerships</h2>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" style="font-size: larger;" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/dealers">Dealerships</a>
+            <a class="nav-link active" style="font-size: larger; font-weight: bold;" aria-current="page" href="/about">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/about">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/contact">Contact Us</a>
+            <a class="nav-link" style="font-size: larger;" href="/contact">Contact Us</a>
           </li>
         </ul>
         <span class="navbar-text">
@@ -67,78 +64,67 @@
     </div>
   </nav>
 
-  <!-- Main Container -->
-  <main class="container py-5">
-    <div class="clay-card about-hero-card mb-5">
-      <div class="row align-items-center g-4 p-4">
-        <div class="col-lg-7">
-          <span class="badge bg-primary mb-2 px-3 py-2 text-uppercase letter-spacing-1">Our Story</span>
-          <h1 class="display-6 fw-bold text-navy mb-3">Premium Automotive Excellence & Integrity</h1>
-          <p class="text-secondary lead fs-6 mb-3">
-            Founded with a vision to redefine the nationwide automotive buying and servicing experience, Dealerships connects discerning drivers with top-tier verified vehicle dealers across the United States.
-          </p>
-          <p class="text-secondary fs-6">
-            We combine rigorous quality standards, authentic customer sentiment insights, and transparent dealer inventory tracking to ensure you drive away with complete confidence.
-          </p>
-        </div>
-        <div class="col-lg-5 text-center">
-          <img src="/static/cars.jpeg" alt="Dealership Fleet" class="img-fluid rounded-4 shadow-sm" style="max-height: 250px; width: 100%; object-fit: cover;">
+  <!-- Main Card Section -->
+  <div class="container my-5">
+    <div class="card shadow-sm" style="width: 90%; margin: auto; border-radius: 12px; overflow: hidden; border: 1px solid #e0e0e0;">
+      <div class="banner p-4 bg-light" name="about-header" style="border-bottom: 1px solid #eee;">
+        <h1 class="display-6 fw-bold" style="color: #1e3a5f;">About Us</h1>
+        <p class="lead fs-6 text-muted mb-0">
+          Welcome to Best Cars dealership, home to the best cars in North America. We deal in sale of domestic and imported cars at reasonable prices.
+          Our experienced team is dedicated to helping you find the perfect vehicle to suit your needs and budget.
+          Whether you're looking for a reliable family car or a high-performance sports model, we've got something for everyone.
+        </p>
+      </div>
+
+      <div class="p-4">
+        <div class="row g-4 justify-content-center">
+          <!-- Person 1 -->
+          <div class="col-md-4">
+            <div class="card h-100 text-center p-3 shadow-sm" style="border-radius: 10px;">
+              <img class="card-img-top mx-auto mt-2" src="/static/person.png" alt="Sarah Jenkins" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover;">
+              <div class="card-body">
+                <p class="title fw-bold fs-5 mb-1" style="color: #1e3a5f;">Sarah Jenkins</p>
+                <p class="title text-primary fw-semibold mb-2">Chief Executive Officer</p>
+                <p class="card-text text-muted small">
+                  Sarah brings over 15 years of executive automotive leadership across North American dealer networks. She champions customer-first transparency and certified vehicle quality standards.
+                </p>
+                <p class="mb-0 small"><a href="mailto:sarah.jenkins@dealerships.com" class="text-decoration-none">sarah.jenkins@dealerships.com</a></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Person 2 -->
+          <div class="col-md-4">
+            <div class="card h-100 text-center p-3 shadow-sm" style="border-radius: 10px;">
+              <img class="card-img-top mx-auto mt-2" src="/static/person.png" alt="Marcus Vance" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover;">
+              <div class="card-body">
+                <p class="title fw-bold fs-5 mb-1" style="color: #1e3a5f;">Marcus Vance</p>
+                <p class="title text-primary fw-semibold mb-2">VP of Dealer Operations</p>
+                <p class="card-text text-muted small">
+                  Marcus oversees dealer partnerships and quality assurance across all 50 states. He ensures every certified dealership meets strict operational and integrity benchmarks.
+                </p>
+                <p class="mb-0 small"><a href="mailto:marcus.vance@dealerships.com" class="text-decoration-none">marcus.vance@dealerships.com</a></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Person 3 -->
+          <div class="col-md-4">
+            <div class="card h-100 text-center p-3 shadow-sm" style="border-radius: 10px;">
+              <img class="card-img-top mx-auto mt-2" src="/static/person.png" alt="Elena Rodriguez" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover;">
+              <div class="card-body">
+                <p class="title fw-bold fs-5 mb-1" style="color: #1e3a5f;">Elena Rodriguez</p>
+                <p class="title text-primary fw-semibold mb-2">Head of Customer Experience</p>
+                <p class="card-text text-muted small">
+                  Elena leads our customer advocacy team and real-time review sentiment tracking. She ensures driver feedback directly drives nationwide service improvements.
+                </p>
+                <p class="mb-0 small"><a href="mailto:elena.rodriguez@dealerships.com" class="text-decoration-none">elena.rodriguez@dealerships.com</a></p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- Leadership Team Section -->
-    <div class="text-center mb-4">
-      <h2 class="fw-bold text-navy">Leadership & Automotive Specialists</h2>
-      <p class="text-muted">Dedicated professionals driving innovation, trust, and client satisfaction</p>
-    </div>
-
-    <div class="row g-4 justify-content-center">
-      <!-- Member 1 -->
-      <div class="col-md-4">
-        <div class="clay-card team-card text-center p-4 h-100">
-          <div class="avatar-wrapper mb-3">
-            <img src="/static/person.png" alt="Sarah Jenkins" class="team-avatar">
-          </div>
-          <h4 class="fw-bold text-navy mb-1">Sarah Jenkins</h4>
-          <span class="badge bg-light text-primary mb-3">Chief Executive Officer</span>
-          <p class="text-secondary small mb-3">
-            Over 15 years in executive leadership across North American automotive networks. She spearheads nationwide dealer operations and consumer integrity benchmarks.
-          </p>
-          <a href="mailto:sarah.jenkins@dealerships.com" class="team-email">sarah.jenkins@dealerships.com</a>
-        </div>
-      </div>
-
-      <!-- Member 2 -->
-      <div class="col-md-4">
-        <div class="clay-card team-card text-center p-4 h-100">
-          <div class="avatar-wrapper mb-3">
-            <img src="/static/person.png" alt="Marcus Vance" class="team-avatar">
-          </div>
-          <h4 class="fw-bold text-navy mb-1">Marcus Vance</h4>
-          <span class="badge bg-light text-primary mb-3">VP of Dealer Operations</span>
-          <p class="text-secondary small mb-3">
-            Directs dealer partner quality assurance and supply network logistics. Marcus ensures every certified showroom adheres to state and federal excellence standards.
-          </p>
-          <a href="mailto:marcus.vance@dealerships.com" class="team-email">marcus.vance@dealerships.com</a>
-        </div>
-      </div>
-
-      <!-- Member 3 -->
-      <div class="col-md-4">
-        <div class="clay-card team-card text-center p-4 h-100">
-          <div class="avatar-wrapper mb-3">
-            <img src="/static/person.png" alt="Elena Rodriguez" class="team-avatar">
-          </div>
-          <h4 class="fw-bold text-navy mb-1">Elena Rodriguez</h4>
-          <span class="badge bg-light text-primary mb-3">Head of Customer Experience</span>
-          <p class="text-secondary small mb-3">
-            Pioneers AI-powered customer feedback tracking and transparent dealer review integrity, ensuring driver voices actively shape nationwide dealer standards.
-          </p>
-          <a href="mailto:elena.rodriguez@dealerships.com" class="team-email">elena.rodriguez@dealerships.com</a>
-        </div>
-      </div>
-    </div>
-  </main>
+  </div>
 </body>
 </html>

@@ -1,0 +1,18 @@
+### Task 16: Analyze Review Sentiment - cURL Command and Response ###
+
+Command:
+curl -X GET "http://localhost:5050/analyze/Fantastic%20services"
+
+Response:
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{"sentiment": "positive"}
+
+Explanation:
+- The sentiment analysis microservice uses VADER (Valence Aware Dictionary and sEntiment Reasoner)
+- Input text: "Fantastic services"
+- Result: "positive" (VADER compound score > 0.05)
+- Service running at: http://localhost:5050
+- Endpoint: GET /analyze/<text>
+

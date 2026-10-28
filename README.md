@@ -1,8 +1,14 @@
-# IBM Cars Dealership Capstone Project - Full Stack Application
+# Best Cars – Cars Dealership Review Portal
+
+**Repository:** `dishant1313/xrwvm-fullstack_developer_capstone`  
+**Public URL:** https://github.com/dishant1313/xrwvm-fullstack_developer_capstone/blob/main/README.md  
+**Author:** Dishant Patel (`dishant1313`)
+
+---
 
 ## Project Overview
 
-A comprehensive, production-quality **Cars Dealership** web application developed as part of the **IBM Full Stack Developer Professional Certificate** Capstone Project. This project demonstrates integration of modern full-stack technologies including Django, React, Node.js, MongoDB, and Flask microservices.
+**Best Cars – Cars Dealership Review Portal** is a production-grade full-stack automotive web platform developed for the IBM Full Stack Developer Capstone. The platform enables users to browse nationwide car dealerships across the United States, view detailed dealership locations, search and filter dealerships by state (such as Kansas), read customer reviews augmented by real-time sentiment analysis, submit genuine car reviews as authenticated users, and manage car makes and models through an administrative backend.
 
 ## Live Demo
 

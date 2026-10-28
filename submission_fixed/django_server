@@ -1,0 +1,22 @@
+### Django Development Server Startup Output ###
+
+$ cd e:\ibm\server
+$ python manage.py runserver 0.0.0.0:8000
+
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 28, 2026 - 16:14:09
+Django version 5.1.7, using settings 'djangoproj.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CTRL-BREAK.
+
+[28/Oct/2026 16:14:15] "GET /djangoapp/get_dealers HTTP/1.1" 200 12500
+[28/Oct/2026 16:14:20] "GET /djangoapp/get_dealers/Kansas HTTP/1.1" 200 271
+[28/Oct/2026 16:14:28] "GET /djangoapp/dealer/15 HTTP/1.1" 200 278
+[28/Oct/2026 16:14:46] "GET /djangoapp/reviews/dealer/15 HTTP/1.1" 200 865
+[28/Oct/2026 16:15:00] "POST /djangoapp/login HTTP/1.1" 200 54
+[28/Oct/2026 16:15:01] "POST /djangoapp/add_review HTTP/1.1" 200 15
+[28/Oct/2026 16:15:13] "GET /djangoapp/reviews/dealer/15 HTTP/1.1" 200 1156
+

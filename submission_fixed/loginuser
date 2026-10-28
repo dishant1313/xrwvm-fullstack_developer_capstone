@@ -1,0 +1,14 @@
+### Task 5: Login User - cURL Command and Response ###
+
+Command:
+curl -X POST http://localhost:8000/djangoapp/login \
+  -H "Content-Type: application/json" \
+  -d '{"userName": "dishant1313", "password": "dishantpass123"}' \
+  -c cookies.txt
+
+Response:
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{"userName": "dishant1313", "status": "Authenticated"}
+

@@ -1,28 +1,17 @@
-### Task 10: Get Dealer by ID - cURL Command and Response ###
+curl -X GET http://localhost:3030/fetchDealer/15
 
-Command:
-curl -X GET http://localhost:8000/djangoapp/dealer/15
-
-Response:
-HTTP/1.1 200 OK
-Content-Type: application/json
-
-{
-  "status": 200,
-  "dealer": [
-    {
-      "_id": "6ae1d158f0d98134e2eba3cd",
-      "id": 15,
-      "city": "San Antonio",
-      "state": "Texas",
-      "address": "5057 Pankratz Hill",
-      "zip": "78225",
-      "lat": "29.3875",
-      "long": "-98.5245",
-      "short_name": "Tempsoft",
-      "full_name": "Tempsoft Car Dealership",
-      "__v": 0
-    }
-  ]
-}
-
+[
+  {
+    "_id": "6ae1d158f0d98134e2eba3cd",
+    "id": 15,
+    "city": "San Antonio",
+    "state": "Texas",
+    "address": "5057 Pankratz Hill",
+    "zip": "78225",
+    "lat": "29.3875",
+    "long": "-98.5245",
+    "short_name": "Tempsoft",
+    "full_name": "Tempsoft Car Dealership",
+    "__v": 0
+  }
+]

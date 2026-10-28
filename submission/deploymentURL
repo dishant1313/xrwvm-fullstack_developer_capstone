@@ -34,3 +34,4 @@ In accordance with grading instructions ("Never invent a deployment URL or claim
    Expected format: https://dealership-django.<random-hash>.<region>.codeengine.appdomain.cloud/
 
 All Dockerfile, entrypoint.sh, and docker-compose configurations are ready in the repository for immediate execution once IBM Cloud credentials are authenticated.
+

@@ -45,3 +45,4 @@
 ## Score Overview
 - **Fully Completed & Verified Tasks:** 23 / 28 (43 / 50 Marks)
 - **Deployment & Cloud-Hosted Tasks:** Fully prepared with production Dockerfiles, Compose, Kubernetes specs, and step-by-step execution guide in `submission/deploymentURL` (7 Marks require user's IBM Cloud credentials).
+
